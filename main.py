@@ -18,7 +18,7 @@ for index, row in df.iterrows():
     for i in range(20, 298, 10):
         pdf.line(10, i, 200, i)
 
-    # Footer - Add breaklines (278mm)
+    # Footer - Add break lines to first page (278mm)
     pdf.ln(265)
     # Set the footer for first page
     pdf.set_font(family='Arial', style='I', size=8)
@@ -26,7 +26,7 @@ for index, row in df.iterrows():
     pdf.cell(w=0, h=12, txt=row['Topic'], align='R')
 
 
-
+    # Rest of pages
     for i in range(row['Pages']-1):
         pdf.add_page()
         # Footer - Add breaklines (278mm)
